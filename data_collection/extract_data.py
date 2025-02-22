@@ -19,7 +19,7 @@ def sanitize_filename(title: str, replacement=" ") -> str:
 	return re.sub(r'[\\/*?:"<>|]', replacement, title)
 
 
-def extract_pages_from_wikidump(path, output_dir=".", n_pages: int = None, start: int = 0, skip_redirects: bool = True, verbose: bool = False) -> None:
+def extract_pages_from_wikidump(path: str, output_dir: str = ".", n_pages: int = None, start: int = 0, skip_redirects: bool = True, verbose: bool = False) -> int:
 	"""
 	Extracts pages from a Wikipedia dump (in XML format), processes them, and writes the text
 	of each page to a separate file named after the page title.
